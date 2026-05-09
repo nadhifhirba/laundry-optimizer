@@ -53,7 +53,7 @@ export default function HomePage() {
     });
 
     if (sortKey === 'distance') list.sort((a, b) => (a as any)._dist - (b as any)._dist);
-    if (sortKey === 'price') list.sort((a, b) => a.pricePerKg - b.pricePerKg);
+    if (sortKey === 'price') list.sort((a, b) => a.price_per_kg - b.price_per_kg);
     if (sortKey === 'rating') list.sort((a, b) => b.rating - a.rating);
 
     return list;
@@ -151,14 +151,14 @@ export default function HomePage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <Clock3 size={12} className="text-[#7BA989]" />
-                {laundry.openTime} – {laundry.closeTime}
+                {laundry.open_hours}
               </span>
             </div>
 
             {/* Price + CTA */}
             <div className="mt-auto flex items-center justify-between pt-2 border-t border-[#EEF2F5]">
               <span className="text-lg font-black text-[#1A1F24]" style={{ fontFamily: "var(--font-nunito)" }}>
-                {formatCurrency(laundry.pricePerKg)}
+                {formatCurrency(laundry.price_per_kg)}
                 <span className="text-xs font-normal text-[#A3B0BC]"> /kg</span>
               </span>
               <span className="flex items-center gap-1 text-xs font-bold text-[#7BA989] opacity-0 transition-opacity group-hover:opacity-100">
